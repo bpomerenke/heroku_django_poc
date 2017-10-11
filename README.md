@@ -1,48 +1,32 @@
-# Heroku Django Starter Template
+# Heroku Django POC
 
-An utterly fantastic project starter template for Django 1.11.
+First attempt at creating a heroku app that runs django
 
-## Features
+## Requirements (see also: https://devcenter.heroku.com/articles/deploying-python)
 
-- Production-ready configuration for Static Files, Database Settings, Gunicorn, etc.
-- Enhancements to Django's static file serving functionality via WhiteNoise.
-- Latest Python 3.6 runtime environment. 
+- Python 3.6.1
+- virtualenv (`pip install virtualenv`)
+- Django (`pip install Django`)
+- heroku CLI (https://devcenter.heroku.com/articles/heroku-cli)
 
-## How to Use
+## Running locally on Windows (OR Linux / mac equivilent when applicable)
 
-To use this project, follow these steps:
+1. `./venv/Scripts/activate` (`. venv/bin/activate`)
+2. `python manage.py migrate`
+3. `python manage.py createsuperuser`
+4. `python manage.py runserver`
+5. Navigate to local server http://localhost:8000 
+6. For admin, navigate to http://localhost:8000/admin (and login with superuser)
 
-1. Create your working environment.
-2. Install Django (`$ pip install django`)
-3. Create a new project using this template
+## Deploying to Heroku
 
-## Creating Your Project
-
-Using this template to create a new Django app is easy::
-
-    $ django-admin.py startproject --template=https://github.com/heroku/heroku-django-template/archive/master.zip --name=Procfile helloworld
-
-(If this doesn't work on windows, replace `django-admin.py` with `django-admin`)
-
-You can replace ``helloworld`` with your desired project name.
-
-## Deployment to Heroku
-
-    $ git init
-    $ git add -A
-    $ git commit -m "Initial commit"
-
-    $ heroku create
-    $ git push heroku master
-
-    $ heroku run python manage.py migrate
-
-See also, a [ready-made application](https://github.com/heroku/python-getting-started), ready to deploy.
-
-## Using Python 2.7?
-
-Just update `runtime.txt` to `python-2.7.13` (no trailing spaces or newlines!).
-
+1. `heroku login`
+2. `heroku create`
+3. `git push heroku master`
+4. First time:
+ 1. `heroku run python manage.py migrate`
+ 2. `heroku run python manage.py createsuperuser`
+5. navigate to url specified by heroku
 
 ## License: MIT
 
