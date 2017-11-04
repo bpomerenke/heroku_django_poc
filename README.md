@@ -8,6 +8,9 @@ First attempt at creating a heroku app that runs django
 - virtualenv (`pip install virtualenv`)
 - Django (`pip install Django`)
 - heroku CLI (https://devcenter.heroku.com/articles/heroku-cli)
+- setup virtual env (first time only)
+  - `virtualenv venv`
+  - `pip install -r requirements.txt`
 
 ## Running locally on Windows (OR Linux / mac equivilent when applicable)
 
